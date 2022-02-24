@@ -1,0 +1,48 @@
+<div class="list row">
+    <div class="col-md-6">
+      <h4>Pages List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let page of pages; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActivePage(page, i)"
+        >
+        
+          {{ page.title.rendered }}
+      
+        </li>    
+      </ul>
+    </div>
+
+
+    <div class="col-md-6">
+      <div *ngIf="currentPage.id">
+        <h4>Tutorial</h4>
+        <div>
+          <label><strong>Title:</strong></label> {{currentPage.title.rendered }}
+        </div>
+        <div>
+          <div>
+            <label><strong>Content:</strong></label>
+            <div [innerHTML]="currentPage.excerpt.rendered ">
+              
+            </div>
+      
+          </div>
+          <div>
+        
+        <div>
+          <label><strong>Status:</strong></label>
+          {{ currentPage.published ? "Pending" : "Published" }}
+        </div>
+        <button class="m-3 btn btn-sm btn-danger" (click)="removePages(currentPage.id)">
+          Remove this page
+        </button>
+        <a class="badge badge-warning" routerLink="/edit-page/{{ currentPage.id }}">
+          Edit
+        </a>
+      </div>
+  
+    </div>
+  </div>
