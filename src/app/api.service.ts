@@ -32,18 +32,18 @@ export class ApiService {
     return this.http.get(`${baseUrl}?title=${title}`);
   }
   update(id: any, data: any): Observable<any> {
-    let headers = new HttpHeaders({'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9iYXR1LnZvYWhiZWlsZC5ubCIsImlhdCI6MTYzNjQ1NDAxOSwibmJmIjoxNjM2NDU0MDE5LCJleHAiOjE2MzcwNTg4MTksImRhdGEiOnsidXNlciI6eyJpZCI6IjMifX19.xXFszTabc6gbbBNuEQw_G6IV4ezwJ9xiPthNLt3XDhw'});
+    let headers = new HttpHeaders({'Content-Type': 'application/json', 'Authorization': 'Bearer '});
     let options = {headers: headers};
     return this.http.post(`${baseUrl}wp/v2/pages/${id}`, data,options);
   }
 
   createPage(page: any){
-    let headers = new HttpHeaders({'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9iYXR1LnZvYWhiZWlsZC5ubCIsImlhdCI6MTYzNjQ1NDAxOSwibmJmIjoxNjM2NDU0MDE5LCJleHAiOjE2MzcwNTg4MTksImRhdGEiOnsidXNlciI6eyJpZCI6IjMifX19.xXFszTabc6gbbBNuEQw_G6IV4ezwJ9xiPthNLt3XDhw'});
+    let headers = new HttpHeaders({'Content-Type': 'application/json', 'Authorization': 'Bearer '});
     let options = {headers: headers};
     return this.http.post<Pages[]>(`${baseUrl}wp/v2/pages`,page, options);
   }
   delete(id:any): Observable<any> {
-    let headers = new HttpHeaders({'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9iYXR1LnZvYWhiZWlsZC5ubCIsImlhdCI6MTYzNjQ1NDAxOSwibmJmIjoxNjM2NDU0MDE5LCJleHAiOjE2MzcwNTg4MTksImRhdGEiOnsidXNlciI6eyJpZCI6IjMifX19.xXFszTabc6gbbBNuEQw_G6IV4ezwJ9xiPthNLt3XDhw'});
+    let headers = new HttpHeaders({'Content-Type': 'application/json', 'Authorization': 'Bearer '});
     let options = {headers: headers};
       return this.http.delete(`${baseUrl}wp/v2/pages/${id}`,options);
     
